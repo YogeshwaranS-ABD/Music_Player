@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Musiq-Login</title>
+</head>
+
+<style type="text/css">
+	*{
+		font-family: sans-serif;
+	}
+	body{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	form{
+		text-align: center;
+		position: absolute;
+		top: 35%;
+		display: flex;
+		flex-direction: column;
+		font-size: 1.25rem;
+	}
+	header{
+		font-size: 1.3rem;
+		text-align: center;
+		border: 0.5px solid grey;
+		border-bottom: 3px solid grey;
+		width: 95%;
+		border-radius: 7px;
+	}
+	input{
+		font-size: 1.25rem;
+		border:none;
+		border-bottom: 3px solid grey;
+	}
+	input:focus{
+		outline:none;
+		border-bottom: 3px solid black;
+	}
+	.hvr:hover{
+		background-color: #554444;
+		box-shadow: 2px 2px 5px #554444;
+	}
+	.btns{
+		display: flex;
+		justify-content: space-evenly;
+	}
+	.btns a, .btns button{
+		width: 20%;
+		border-radius: 8px;
+		text-decoration: none;
+		padding: 4%;
+		background-color: #333333;
+		color: white;
+	}
+	button{
+		font-size: 1.15rem;
+	}
+	h4{
+		color: grey;
+	}
+	@media(max-width: 700px){
+		.btns{
+			flex-direction: column;
+			align-items: center;
+			row-gap: 1.5rem;
+		}
+		header{
+			margin: 3px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 2%;
+		}
+	}
+</style>
+
+<body>
+	<header>
+		<h1>MusiQ</h1>
+	</header>
+	<form method="POST">
+		<h2>Administrator Login</h2>
+		<div>
+			<label for="usrname">Username :</label>
+			<input type="text" name="usrname">
+		</div>
+		<br>
+		<div>
+			<label for="pwsd">Password :</label>
+			<input type="password" name="pwsd">
+		</div>
+		<br>
+		<div class="btns">
+			<button type="submit" name="login" class="hvr" value="Login">Login</button>
+		</div>
+		<h4>Don't have admin access? Login as standard <a href="/login">User</a> </h4>
+	</form>
+</body>
+</html>

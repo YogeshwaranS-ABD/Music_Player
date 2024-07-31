@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Musiq - {{song_name}} </title>
+</head>
+
+<style>
+	*{
+		font-family: sans-serif;
+	}
+	nav{
+		display: flex;
+		justify-content: space-between;
+		padding: 1%;
+	}
+	nav ul{
+		margin: 0;
+		padding: 0.75% 0% 0% 0%;
+		list-style: none;
+		display: flex;
+		flex-direction: row;
+		column-gap: 2rem;
+	}
+	nav ul li{
+		font-size: 1.25rem;
+	}
+	nav ul li a{
+		text-decoration: none;
+		color: black;
+	}
+	nav ul li a:visited{
+		color: grey;
+	}
+	input{
+		outline: none;
+		border: none;
+		border-bottom: 2px solid grey;
+		font-size: 1.25rem;
+	}
+	h1{
+		margin: 0;
+		font-size: 2rem;
+		font-family: verdana;
+	}
+	.content{
+		margin: auto;
+		margin-top: 3rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		padding: 2%;
+		border: 2px solid grey;
+		width: 65%;
+		border-radius: 10px;
+	}
+	.content>div{
+		margin-top: 2%;
+	}
+</style>
+
+<body>
+	<header>
+		<script src="../static/script/nav1.js"></script>
+	</header>
+	<div class="content">
+		<h1>{{song_name}}</h1>
+		<div>
+			<audio controls preload="none">
+				<source src="../static/songs/{{song_name}}.mp3" type="audio/mpeg">
+			</audio>
+		</div>
+		<h3 class="lyrics">
+			{% for i in lyrics%}
+				{{i}}
+				<br>
+			{%endfor%}
+		</h3>
+	</div>
+</body>
+</html>
